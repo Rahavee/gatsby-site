@@ -1,6 +1,7 @@
 import React from "react"
 import splash from "../Images/splash.jpg"
 import { makeStyles } from "@material-ui/core/styles"
+import Projects from "../Components/Projects"
 import CssBaseline from "@material-ui/core/CssBaseline"
 
 const useStyles = makeStyles({
@@ -33,6 +34,7 @@ function App() {
       <CssBaseline />
       <div className={classes.mainPage}  />
       <div className={classes.box}>Hi Dude!</div>
+      <Projects/>
     </div>
   )
 }
