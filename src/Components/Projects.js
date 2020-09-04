@@ -2,7 +2,6 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Cards from "./Cards"
 import random from "../Images/random.png"
-import { graphql } from "gatsby"
 import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles({
@@ -16,7 +15,8 @@ const useStyles = makeStyles({
     flex: 5,
   },
 })
-export default function Projects({data}) {
+export default function Projects() {
+  console.log(data);
   const classes = useStyles()
   return (
     <div className={classes.container}>
@@ -39,19 +39,6 @@ export default function Projects({data}) {
 
 
 
-export const query = graphql`
-  {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            desc
-          }
-        }
-      }
-    }
-  }
-`
+
 
 
