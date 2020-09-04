@@ -1,9 +1,11 @@
 import React from "react"
 import splash from "../Images/splash.jpg"
 import { makeStyles } from "@material-ui/core/styles"
-import Projects from "../Components/Projects"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Bio from "../Components/Bio"
+import Cards from "../Components/Cards"
+import random from "../Images/random.png"
+import Typography from "@material-ui/core/Typography"
 import { graphql } from "gatsby"
 
 const useStyles = makeStyles({
@@ -19,6 +21,15 @@ const useStyles = makeStyles({
     flexDirection:"row",
     width:"100%"
   },
+  projectContainer: {
+    display:"flex",
+    justifyContent:"center",
+    flexDirection:"column",
+    alignItems:"center",
+    backgroundColor: "#ffffff",
+    width: "100%",
+    flex: 5,
+  },
 })
 
 export default function App({data}) {
@@ -29,7 +40,15 @@ export default function App({data}) {
       <div className={classes.mainPage} />
       <div className={classes.bioProjectsWrapper}>
         <Bio />
-        <Projects/>
+        <div className={classes.projectContainer}>
+          <Typography variant="h2">Code Portfolio</Typography>
+        {data.allMarkdownRemark.edges.map(({ node })=>(<Cards
+          title={node.frontmatter.title}
+          url="Code-Etch"
+          image={random}
+          desc={node.frontmatter.desc}
+        />))}
+        </div>
       </div>
     </div>
   )
