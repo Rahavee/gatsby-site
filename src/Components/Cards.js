@@ -45,7 +45,7 @@ export default function Cards(props) {
             flexDirection: "column",
           }}
         >
-          <img src={props.image} className={classes.image} />
+          <img alt="project" src={props.image} className={classes.image} />
           <Typography variant="body1">{props.desc}</Typography>
         </CardContent>
         <CardActions>

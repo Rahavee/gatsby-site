@@ -6,7 +6,7 @@ import Bio from "../Components/Bio"
 import Cards from "../Components/Cards"
 import random from "../Images/random.png"
 import Typography from "@material-ui/core/Typography"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 const useStyles = makeStyles({
   mainPage: {
@@ -18,21 +18,22 @@ const useStyles = makeStyles({
   },
   bioProjectsWrapper: {
     display: "flex",
-    flexDirection:"row",
-    width:"100%"
+    flexDirection: "row",
+    width: "100%",
   },
   projectContainer: {
-    display:"flex",
-    justifyContent:"center",
-    flexDirection:"column",
-    alignItems:"center",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
     backgroundColor: "#ffffff",
     width: "100%",
     flex: 5,
   },
+  link: { textDecoration: "none", color: "inherit" },
 })
 
-export default function App({data}) {
+export default function App({ data }) {
   const classes = useStyles()
   return (
     <div className="App">
@@ -42,12 +43,17 @@ export default function App({data}) {
         <Bio />
         <div className={classes.projectContainer}>
           <Typography variant="h2">Code Portfolio</Typography>
-        {data.allMarkdownRemark.edges.map(({ node })=>(<Cards
-          title={node.frontmatter.title}
-          url="Code-Etch"
-          image={random}
-          desc={node.frontmatter.desc}
-        />))}
+          {data.allMarkdownRemark.edges.map(({ node }, index) => (
+            <Link to={node.fields.slug} className={classes.link}>
+              <Cards
+                title={node.frontmatter.title}
+                key={index}
+                url="Code-Etch"
+                image={random}
+                desc={node.frontmatter.desc}
+              />
+            </Link>
+          ))}
         </div>
       </div>
     </div>
@@ -59,9 +65,12 @@ export const query = graphql`
     allMarkdownRemark {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
-            title
             desc
+            title
           }
         }
       }

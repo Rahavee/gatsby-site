@@ -25,7 +25,7 @@ export default function Bio(props) {
   return (
     <div className={classes.container}>
       <Typography variant="h4">Rahavee</Typography>
-      <img className={classes.image} src={me} />
+      <img className={classes.image} src={me} alt="me"/>
       <Typography className={classes.bio} variant="body1">
         Candy canes powder sugar plum tiramisu. Toffee apple pie gingerbread
         caramels biscuit halvah tart lollipop. Candy canes macaroon marshmallow
