@@ -6,29 +6,30 @@ import Button from "@material-ui/core/Button"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import GitHubIcon from "@material-ui/icons/GitHub"
+import Img from "gatsby-image"
 
 const useStyles = makeStyles({
   cardContainer: {
-    backgroundColor: "#f3f3f1",
-    paddingTop: "20px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    marginTop:20,
-    marginLeft:"10%",
-    marginRight:"10%"
+    backgroundColor: "#f3f3f1",
+    paddingTop: "20px",
+    marginTop: 20,
+    marginLeft: "10%",
+    marginRight: "10%",
   },
   image: {
     height: 350,
     width: 350,
   },
-  title:{
-    "&:hover":{
-      fontWeight:"bold",
-      cursor:"pointer"
-    }
-  }
+  title: {
+    "&:hover": {
+      fontWeight: "bold",
+      cursor: "pointer",
+    },
+  },
 })
 
 export default function Cards(props) {
@@ -36,7 +37,13 @@ export default function Cards(props) {
   return (
     <div>
       <Card className={classes.cardContainer}>
-        <Typography className={classes.title} variant="h4">{props.title}</Typography>
+        {props.frontPage ? (
+          <Typography className={classes.title} variant="h4">
+            {props.title}
+          </Typography>
+        ) : (
+          ""
+        )}
         <CardContent
           style={{
             display: "flex",
@@ -45,18 +52,42 @@ export default function Cards(props) {
             flexDirection: "column",
           }}
         >
-          <img alt="project" src={props.image} className={classes.image} />
-          <Typography variant="body1">{props.desc}</Typography>
+          <Img fluid={props.image} className={classes.image} />
+          <br />
+          <br />
+          {props.frontPage ? (
+            <Typography variant="body1">{props.desc}</Typography>
+          ) : (
+            <div>
+              <Typography variant="h6">Technologies used</Typography>
+              <Typography variant="body1">{props.tech}</Typography>
+              <br />
+              <br />
+              <Typography variant="h6">Description</Typography>
+              <Typography variant="body1">{props.desc}</Typography>
+              <br />
+              <br />
+              <Typography variant="h6">Screenshots</Typography>
+              <Img fluid={props.screenshot1} className={classes.image} />
+              <CardActions
+                style={{
+                  padding: "40px",
+                  paddingBottom: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Button
+                  href={"https://www.github.com/Rahavee/" + props.url}
+                  size="medium"
+                >
+                  <GitHubIcon />
+                  View Code
+                </Button>
+              </CardActions>
+            </div>
+          )}
         </CardContent>
-        <CardActions>
-          <Button
-            href={"https://www.github.com/Rahavee/" + props.url}
-            size="small"
-          >
-            <GitHubIcon />
-            View Code
-          </Button>
-        </CardActions>
       </Card>
     </div>
   )

@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Bio from "../Components/Bio"
 import Cards from "../Components/Cards"
-import random from "../Images/random.png"
 import Typography from "@material-ui/core/Typography"
 import { graphql, Link } from "gatsby"
 
@@ -35,6 +34,7 @@ const useStyles = makeStyles({
 
 export default function App({ data }) {
   const classes = useStyles()
+
   return (
     <div className="App">
       <CssBaseline />
@@ -49,8 +49,9 @@ export default function App({ data }) {
                 title={node.frontmatter.title}
                 key={index}
                 url="Code-Etch"
-                image={random}
+                image={node.frontmatter.featuredImage.childImageSharp.fluid}
                 desc={node.frontmatter.desc}
+                frontPage={true}
               />
             </Link>
           ))}
@@ -71,6 +72,13 @@ export const query = graphql`
           frontmatter {
             desc
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
