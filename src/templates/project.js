@@ -44,12 +44,16 @@ export default function Project({ data }) {
           <Typography variant="h2">{source.title}</Typography>
           <Cards
             title={source.title}
-            url="Code-Etch"
+            url={source.project}
             tech={source.tech}
             image={source.featuredImage.childImageSharp.fluid}
             desc={source.longDesc}
             screenshot1={source.screenshot1.childImageSharp.fluid}
+            screenshot2={source.screenshot2.childImageSharp.fluid}
             frontPage={false}
+            demo={source.demo}
+            demoURL={source.demoURL}
+            big={source.big}
           />
         </div>
       </div>
@@ -65,6 +69,10 @@ export const query = graphql`
         longDesc
         tech
         title
+        demo
+        demoURL
+        project
+        big
         screenshot1 {
           childImageSharp {
             fluid(maxWidth: 800) {
@@ -72,9 +80,16 @@ export const query = graphql`
             }
           }
         }
+        screenshot2 {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }

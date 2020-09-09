@@ -21,8 +21,11 @@ const useStyles = makeStyles({
     marginRight: "10%",
   },
   image: {
-    height: 350,
-    width: 350,
+    height: "100%",
+    width: "100%",
+  },
+  button:{
+    backgroundColor:"#CFE2d9"
   },
   title: {
     "&:hover": {
@@ -30,6 +33,10 @@ const useStyles = makeStyles({
       cursor: "pointer",
     },
   },
+  imageFront: {
+    height:400,
+    width:500
+  }
 })
 
 export default function Cards(props) {
@@ -52,7 +59,7 @@ export default function Cards(props) {
             flexDirection: "column",
           }}
         >
-          <Img fluid={props.image} className={classes.image} />
+          <Img fluid={props.image} className={classes.imageFront} />
           <br />
           <br />
           {props.frontPage ? (
@@ -68,22 +75,33 @@ export default function Cards(props) {
               <br />
               <br />
               <Typography variant="h6">Screenshots</Typography>
-              <Img fluid={props.screenshot1} className={classes.image} />
+              {props.big==="yes"?(<div style={{display:"flex", flexDirection:"column"}}>
+                <Img fluid={props.screenshot1} className={classes.image} />
+                <br/>
+                <Img fluid={props.screenshot2} className={classes.image}/>
+              </div>):(<div style={{display:"flex"}}>
+                <Img fluid={props.screenshot1} className={classes.image} />
+                <Img fluid={props.screenshot2} className={classes.image}/>
+              </div>)}
+
               <CardActions
                 style={{
                   padding: "40px",
                   paddingBottom: "60px",
                   display: "flex",
-                  justifyContent: "center",
+                  justifyContent: "space-around",
                 }}
               >
                 <Button
+                  className={classes.button}
                   href={"https://www.github.com/Rahavee/" + props.url}
                   size="medium"
                 >
                   <GitHubIcon />
                   View Code
                 </Button>
+                {props.demo==="project"?(<Button className={classes.button} href={props.demoURL} size="medium"> Project Proposal</Button>):("")}
+                {props.demo==="yes"?(<Button className={classes.button} href={props.demoURL} size="medium"> Visit page</Button>):(" ")}
               </CardActions>
             </div>
           )}
