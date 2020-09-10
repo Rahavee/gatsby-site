@@ -10,17 +10,11 @@ module.exports = {
   },
   /* Your site config here */
   plugins: [
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/Images`
+        path: `${__dirname}/src/pages`
       }
     },
     `gatsby-transformer-remark`,

@@ -88,8 +88,8 @@ export const query = graphql`
           }
         }
         featuredImage {
-          childImageSharp {
-            fluid {
+              childImageSharp {
+                fluid {
               ...GatsbyImageSharpFluid
             }
           }

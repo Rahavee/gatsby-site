@@ -1,5 +1,5 @@
 import React from "react"
-import me from "../Images/me.jpg"
+import me from "../pages/me.jpg"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
