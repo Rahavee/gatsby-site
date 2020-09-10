@@ -21,11 +21,11 @@ const useStyles = makeStyles({
     marginRight: "10%",
   },
   image: {
-    height: "100%",
+    height: "auto",
     width: "100%",
   },
-  button:{
-    backgroundColor:"#CFE2d9"
+  button: {
+    backgroundColor: "#CFE2d9",
   },
   title: {
     "&:hover": {
@@ -34,9 +34,9 @@ const useStyles = makeStyles({
     },
   },
   imageFront: {
-    height:400,
-    width:500
-  }
+    height: 400,
+    width: 500,
+  },
 })
 
 export default function Cards(props) {
@@ -75,14 +75,18 @@ export default function Cards(props) {
               <br />
               <br />
               <Typography variant="h6">Screenshots</Typography>
-              {props.big==="yes"?(<div style={{display:"flex", flexDirection:"column"}}>
-                <Img fluid={props.screenshot1} className={classes.image} />
-                <br/>
-                <Img fluid={props.screenshot2} className={classes.image}/>
-              </div>):(<div style={{display:"flex"}}>
-                <Img fluid={props.screenshot1} className={classes.image} />
-                <Img fluid={props.screenshot2} className={classes.image}/>
-              </div>)}
+              {props.big === "yes" ? (
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <Img fluid={props.screenshot1} className={classes.image} />
+                  <br />
+                  <Img fluid={props.screenshot2} className={classes.image} />
+                </div>
+              ) : (
+                <div style={{ display: "flex" }}>
+                  <Img fluid={props.screenshot1} className={classes.image} />
+                  <Img fluid={props.screenshot2} className={classes.image} />
+                </div>
+              )}
 
               <CardActions
                 style={{
@@ -100,8 +104,42 @@ export default function Cards(props) {
                   <GitHubIcon />
                   View Code
                 </Button>
-                {props.demo==="project"?(<Button className={classes.button} href={props.demoURL} size="medium"> Project Proposal</Button>):("")}
-                {props.demo==="yes"?(<Button className={classes.button} href={props.demoURL} size="medium"> Visit page</Button>):(" ")}
+                {props.demo === "project" ? (
+                  <Button
+                    className={classes.button}
+                    href={props.demoURL}
+                    size="medium"
+                  >
+                    {" "}
+                    Project Proposal
+                  </Button>
+                ) : (
+                  ""
+                )}
+                {props.demo === "yes" ? (
+                  <Button
+                    className={classes.button}
+                    href={props.demoURL}
+                    size="medium"
+                  >
+                    {" "}
+                    Visit page
+                  </Button>
+                ) : (
+                  " "
+                )}
+                {props.demo === "trello" ? (
+                  <Button
+                    className={classes.button}
+                    href={props.demoURL}
+                    size="medium"
+                  >
+                    {" "}
+                    View Trello Board
+                  </Button>
+                ) : (
+                  ""
+                )}
               </CardActions>
             </div>
           )}

@@ -1,13 +1,13 @@
 ---
-title: "Moneta"
-featuredImage: ../Images/Moneta.png
-screenshot1: ../Images/Moneta1.png
-screenshot2: ../Images/Moneta2.png
-tech: "Python, Vader, Flask, React.js"
-longDesc: "Moneta is an aggregation of vital information about a stock that a potential investor would want to know. It displays a graphical view of the stock price over time along with sentiment reports of recent news and tweets about the stock. Sentiment analysis is the process of using AI to analyze data and gauge the emotion behind it as positive, neutral or negative. A sentiment score is given on a scale of 1 to -1 with 1 being the most positive and -1 being the most negative. Vader is the sentiment analysis tool used for this project. It also charts out the top investors and mutual funds invested in the particular stock. The data for this website is provided by a flask API that I created in Python and Flask. The front end of the project is built in React.js with material-ui styling"
-desc: "Moneta is an aggregation of vital information about a stock that a potential investor would want to know. It displays a graphical view of the stock price over time along with sentiment reports of recent news and tweets about the stock. It also charts out the top investors and mutual funds invested in the particular stock."
-project: "Code-Etch"
-demo: "yes"
-demoURL: "https://rahavee.github.io/Stocks-frontend/"
-big: "yes"
+title: "Catapult"
+featuredImage: ../Images/Catapult.png
+screenshot1: ../Images/Catapult1.png
+screenshot2: ../Images/Catapult2.png
+tech: "Python, Pyrosim"
+longDesc: "Catapult was a final project for my Evolutionary Robotics class. I created and evolved a throwing robot in PyRoSim that would throw a square block onto a moving target. The structural design of the robot was inspired by a human arm where the robot joints were arranged to move in all possible directions, in case evolution finds a better possible solution to the throwing problem that is not conventional. The fitness function used for evolving the robot penalised unwanted behaviours such as rolling the block on the ground and rewarded behaviours that minimised the distance between the block and target."
+desc: "Catapult was a final project for my Evolutionary Robotics class. With the help of pyrosim a throwing robot was created and evolved that would throw a square block onto a moving target. Inspired by a human arm this virtual robot made use of the various sensors to accurately sense and throw a block on a target. "
+project: "Throwing-Robot"
+demo: "project"
+demoURL: "https://docs.google.com/document/d/1FX4RLWkUm9b0_UiS7OM3MEdN78nqRA443One6X7bzLQ/edit?usp=sharing"
+big: "no"
 ---
