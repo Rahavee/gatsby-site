@@ -1,8 +1,8 @@
 ---
 title: "Code-Etch with Raspberry Pi"
-featuredImage: /pages/CodeEtch.jpeg
-screenshot1: /pages/CodeEtch1.png
-screenshot2: /pages/CodeEtch2.png
+featuredImage: CodeEtch.jpeg
+screenshot1: CodeEtch1.png
+screenshot2: CodeEtch2.png
 tech: "Python, OpenCV, Canny Edge, Raspberry pi, Javascript, HTML, Flask"
 longDesc:
   "Code-Etch is powered by a Raspberry Pi that turns the knobs of the Etch-A-Sketch to convert real life photographs and images to drawings on the Etch-A-Sketch. Drawing with a traditional Etch-A-Sketch can be a frustrating and tedious task for many. In this project
