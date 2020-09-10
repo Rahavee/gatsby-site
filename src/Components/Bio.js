@@ -24,7 +24,7 @@ export default function Bio(props) {
   const classes = useStyles()
   return (
     <div className={classes.container}>
-      <Typography variant="h4">Rahavee</Typography>
+      <Typography variant="h4">Rahavee</Typography>2
       <Typography className={classes.bio} variant="body1">
         Hello! I am a software engineer and a senior at the University of Vermont. with experience in C++, Python, Java, Javascript, Machine learning and more.
       </Typography>
