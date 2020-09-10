@@ -10,7 +10,7 @@ module.exports = {
   },
   /* Your site config here */
   plugins: [
-    
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,7 +18,9 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
+    `gatsby-remark-relative-images`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+
   ]
 }
