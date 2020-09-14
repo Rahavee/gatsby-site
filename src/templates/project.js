@@ -17,7 +17,10 @@ const useStyles = makeStyles({
   },
   bioProjectsWrapper: {
     display: "flex",
-    flexDirection: "row",
+    "@media (min-width: 700px)":{
+      flexDirection:"row",
+    },
+    flexDirection: "column",
     width: "100%",
   },
   projectContainer: {

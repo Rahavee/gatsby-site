@@ -34,6 +34,10 @@ const useStyles = makeStyles({
     },
   },
   imageFront: {
+    "@media (max-width: 700px)":{
+      height:200,
+      width: 300
+    },
     height: 400,
     width: 500,
   },

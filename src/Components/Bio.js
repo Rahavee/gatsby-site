@@ -1,4 +1,5 @@
 import React from "react"
+import me from "../Images/me.jpg"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
@@ -16,7 +17,7 @@ const useStyles = makeStyles({
     padding: "40px 40px 10px 40px",
     backgroundColor: "#ffffff",
   },
-  image: { height: 200, width: 150, marginTop: 5, marginBottom: 5 },
+  image: { height: 250, width: 150, marginTop: 5, marginBottom: 5 },
   bio: { margin: "5px 10px 10px 10px" },
 })
 
@@ -24,7 +25,8 @@ export default function Bio(props) {
   const classes = useStyles()
   return (
     <div className={classes.container}>
-      <Typography variant="h4">Rahavee</Typography>2
+      <Typography variant="h4">Rahavee</Typography>
+            <img className={classes.image} src={me} alt="me"/>
       <Typography className={classes.bio} variant="body1">
         Hello! I am a software engineer and a senior at the University of Vermont. with experience in C++, Python, Java, Javascript, Machine learning and more.
       </Typography>
